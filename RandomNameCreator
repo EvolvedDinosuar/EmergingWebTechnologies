@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script type="text/javascript">
+            
+            function randomNumber(maxValue)
+            {
+                return Math.floor(Math.random() * maxValue);
+            }
+
+            //Collection for names
+            var studentGroup = [];
+            var lastNames = [];
+            var firstNames = [];
+
+            //List of classmates
+            studentGroup.push("Jared Adkins");
+            studentGroup.push("Lindsey Brumfield");
+            studentGroup.push("Danielle Goodman");
+            studentGroup.push("Heather Hogsett");
+            studentGroup.push("Jacob Insco");
+            studentGroup.push("Hunter Johnson");
+            studentGroup.push("Jennifer Kubeck");
+            studentGroup.push("Michael Laxton");
+            studentGroup.push("Mason Liu");
+            studentGroup.push("Brianna Pruitt");
+            studentGroup.push("Lauren Sharp");
+            studentGroup.push("Joshua Wahner");
+            studentGroup.push("Austin West");
+            
+            //Made func to break studentGroup since I'm lazy
+            function breakNamesApart(arrayToBreak)
+            {
+                //console.log("start of func");
+                //debugger;
+                var i = 0;
+                arrayToBreak.forEach(function(element){
+                    element = element.split(" ");
+                    firstNames.push(element[0])
+                    lastNames.push(element[1])
+                });
+            }
+
+            //Takes the values from breakNamesApart and combines random combinations
+            function combineNames(firstNameArray, lastNameArray)
+            {
+                var randFirstName = randomNumber(firstNameArray.length);
+                var ranLastName = randomNumber(lastNameArray.length);
+                return `${firstNames[randFirstName]} ${lastNames[ranLastName]}`;
+            }
+
+            breakNamesApart(studentGroup);
+
+        </script>
+    </head>
+    <body>
+        This page is meant as a testing ground for IT 242
+    </body>
+</html>
